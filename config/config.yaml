@@ -1,0 +1,27 @@
+# Configuration file for Action Recognition in Videos
+
+model:
+  name: "r3d_18"  # Options: r3d_18, mc3_18, r2plus1d_18
+  device: null     # null for auto-detection, or specify 'cpu'/'cuda'
+  num_classes: 400
+  max_frames: 32
+  input_size: [112, 112]
+  batch_size: 1
+
+data:
+  data_dir: "data"
+  labels_file: "kinetics_labels.txt"
+  test_video: "test_video.mp4"
+  synthetic_video_duration: 3.0
+  synthetic_video_fps: 30
+
+ui:
+  title: "Action Recognition in Videos"
+  description: "Identify human actions in video clips using 3D CNNs"
+  max_file_size_mb: 100
+  supported_formats: [".mp4", ".avi", ".mov", ".mkv"]
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/action_recognition.log"
